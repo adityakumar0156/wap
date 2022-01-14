@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Dosis:wght@200&family=Handlee&family=Hind+Siliguri&family=Inter:wght@100&family=Just+Another+Hand&family=Patrick+Hand&family=Spline+Sans:wght@300&display=swap');
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="icon" type="image/x-icon" href="https://writenshare.herokuapp.com/static/media/logo.png">
+
+    <script defer src="/static/js/driver.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/css.css">
+    <title>Writing App- Home</title>
+</head>
+
+<body>
+    <!-- Jai shree Ram!! -->
+
+    <div class="entry" id="entry">
+        <div style="text-align: center">
+            <div id="footer2"><img style="margin: 7px;" src="https://writenshare.herokuapp.com/static/media/logo.png" height="60px" width="60px" alt="">Writing App
+            </div>
+            <div class="my-2" style="    text-align: center;
+            font-size: 110%;
+            /* margin-top: 14px; */   max-width: 500px; 
+    display: block;
+    margin: auto;padding: 0px 10px 0px 10px;">
+                Here you can compose an animated message/letter/note and then generate a link of that content which you can share on Instagram or Facebook.You just need to add elements one by one and then a generate link of that content.
+
+            </div>
+            <button class="btn btn-success my-4" onClick="entryClicked()">Go to Editer <img class="btn_icon"
+                    src="static/media/button_img/editor.png" alt="" </button>
+
+        </div>
+        <div style="    text-align: center;
+        font-size: 87%;
+        font-weight: bold;
+        overflow-y: auto;
+        border: 4px solid #27ff94;
+        border-radius: 17px;
+        /* margin: 0px 4px 0px 3px; */
+        width: auto;
+        /* display: inline-block; */
+        /* margin: auto; */
+        /* position: relative; */
+        /* left: 7%; */
+        background-color: #aeffd4;
+        min-height: 51vh;    min-height: 47vh;
+        max-width: 500px;
+    display: block;
+    margin: auto;
+         "> Recent Visitors🙋‍♂️<br>
+            <div class="user" style="max-height: 50vh;overflow-y: auto;text-align: initial;
+            padding-left: 15px;" id="user"></div>
+
+        </div>
+        <hr>
+        <div id="footer3" style="font-size:120%;position:relative;"><img style="margin: 7px;" src="https://writenshare.herokuapp.com/static/media/logo.png" height="35px" width="35px" alt="">Writing App
+            <div class="dev" style="position: absolute;
+            font-size: 80%;
+            left: 77px;
+            /* bottpm: 0px; */
+            bottom: -11px;">Developed By Aditya</div>
+        </div>
+        <!-- <div class="footer_entry">developed by Aditya<br>Feedback : <b>aditya5kumar2012@gmail.com</b></div> -->
+    </div>
+
+    <div class="all" id="all">
+
+        <div class="header">Writers App <img width="25px" height="25px" style="position: relative;top:-8px;" onClick="" src='https://c.tenor.com/fK_eMctRFfUAAAAj/emoji-emoticon.gif' />
+        </div>
+
+        <div class="form">
+            <div class="setting" style="">
+                <input type="textarea" name="" id="text" autocomplete="off" value="Hello World..!" placeholder="Write something..">
+                <button onClick=clearClicked() id="clearBtn" class=" mx-2 btn btn-success"><img class="btn_icon"
+                        src="static/media/button_img/clear.png" alt=""></button>
+
+                <br>&nbsp&nbsp&nbspElementShape:
+                <select name="cards" id="card" onchange="cardsChange()">
+                    <option value="card1">Circular(Tab/Laptop)</option>
+                    <option value="card2">Soft Boundary</option>
+                    <option value="card3">Elliptical</option>
+                    <option value="card4">For Mobile</option>
+
+                    <!-- <option value="card3">Audi</option> -->
+                </select>
+                <br>&nbsp&nbsp&nbspElementBackGround:
+                <select name="colors" id="bg_color" onchange="colorsChange()">
+                    <option value="bg_color1">light purple</option>
+                    <option value="bg_color2">light pink</option>
+                    <option value="bg_color3">light green</option>
+                    <option value="bg_color4">Plane</option>
+                    <option value="bg_color5">Plane with Border</option>
+                    <option value="bg_color6">Transparent</option>
+                    <option value="bg_color7">Animated 1</option>
+                    <option value="bg_color8">Animated 2</option>
+                    <option value="bg_color9">Animated 3(dark)</option>
+
+
+                    <!-- <option value="card3">Audi</option> -->
+
+
+                </select>
+                <br>&nbsp&nbsp&nbspFontStyle:
+                <select name="fonts" id="fontStyle" onchange="fontsChange()">
+                    <option value="font1">Font 1</option>
+                    <option value="font2">Font 2</option>
+                    <option value="font3">Font 3</option>
+                    <option value="font4">Font 4</option>
+                    <option value="font5">Font 5</option>
+                    <!-- <option value="card3">Audi</option> -->
+                </select>
+                <br>&nbsp&nbsp&nbspFontSize:
+                <select name="fontsize" id="fontSize" onchange="fontsizeChange()">
+                    <option value="fontsize1">Small</option>
+                    <option value="fontsize2">Medium </option>
+                    <option value="fontsize3">Medium++</option>
+                    <option value="fontsize4">Large</option>
+                    <option value="fontsize5">Huge</option>
+
+                </select>
+                <br>&nbsp&nbsp&nbspImageSize:
+                <select name="imgsize" id="imgSize" onchange="imgSizeChange()">
+                    <option value="imgsize1">Small</option>
+                    <option value="imgsize2">Medium +</option>
+                    <option value="imgsize3">Medium ++</option>
+                    <option value="imgsize4">Large</option>
+                    <option value="imgsize5">Huge</option>
+
+                    <!-- <option value="imgsize4">Very Large</option> -->
+
+
+                </select>
+                <br>&nbsp&nbsp&nbspMusic:
+                <select name="musics" id="music" onchange="musicChange()">
+                    <option value="0">None</option>
+
+                    <option value="1">HBD 1</option>
+                    <option value="2">HBD 2</option>
+                    <option value="3">HBD 3</option>
+                    <option value="4">Into Your arms</option>
+                    <option value="5">Tuje dekha toye Jna</option>
+                    <option value="6">Cuppy Cake</option>
+                    <option value="7">Tone 1</option>
+                    <option value="8">Tone2</option>
+                </select>
+                <br>&nbsp&nbsp&nbspBackground:
+                <select name="body_bg" id="body_bg" onchange="bodyBgChange()">
+                    <option value="bbg1">Animation 1</option>
+                    <option value="bbg2">Animation 2</option>
+                    <option value="bbg3">Animation 3</option>
+                    <option value="bbg5">Animation 4(dark)</option>
+
+                    <option value="bbg4">Plane</option>
+
+                </select><br>
+
+                <!-- <br> Image Position:&nbsp&nbsp&nbsp
+            <input type="radio" name="out_in" value="Outside">OutSide
+            <input type="radio" name="out_in" value="Inside"> Inside<br> -->
+            </div>
+            <div style="text-align:center;margin-top:8px;">
+                <button onClick=gifBtnClicked() id="gifBtn" class="mx-2 my-2 btn btn-success">GIFs <img class="btn_icon"
+                        src="static/media/button_img/image.png" alt=""></button>
+                <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">My Page <img class="btn_icon"
+                        src="static/media/button_img/page.png" alt=""></button>
+            </div>
+            <div style="
+                text-align: center;
+                position: relative;
+            ">
+                <button id="restart_music" class="btn btn-success" onClick="restart_music()"><img class="btn_icon"
+                        src="static/media/button_img/reload.png" alt=""></button>
+                <button onClick="musicToogle()" id="play_btn" class="btn btn-success "><img class="btn_icon"
+                        src="static/media/button_img/play.png" alt=""></button></button>
+                <progress id="progress" value="0" max="100"> 0% </progress>
+                <div id="music_name" style="
+                position: absolute;
+                left: 50%;
+                bottom: -24%;">Song Name</div>
+            </div>
+            <hr>
+            <input type="text" placeholder="🔎Search GIFs,memes" id="search_memes"><br>
+            <div class="gif_container" id="gif_container">
+                Emoji:
+                <br>
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src="https://c.tenor.com/rxFL3ce7lUUAAAAi/emoji.gif" />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/ASddRQRXgOoAAAAi/emoji-smiley.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/v7I_1mKJOB4AAAAd/huummm-que-rico.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/bpdXZsCLzo8AAAAi/love-heart.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/7bdEMW4BPt0AAAAd/hmmm.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/uZFq07-ujK8AAAAj/man-shrugging-joypixels.gif' />
+                <!-- <img width="50px" height="50px" onClick="imgClicked(this)" src='https://c.tenor.com/m1VTnlDMcFEAAAAi/shrug-joypixels.gif' /> -->
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/fkX8azOfv9QAAAAi/woman-facepalming-joypixels.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://cdn-0.emojis.wiki/emoji-pics/facebook/woman-shrugging-facebook.png' />
+
+                <!-- <img width="50px" height="50px" onClick="imgClicked(this)" src='https://c.tenor.com/Wq-MvpjAJksAAAAS/emojilaugh-emoji.gif' /> -->
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/bDOwJTUOt-8AAAAi/sad-but-relieved-face-people.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/ySU7TUgwfZoAAAAC/tolkie-sad.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/aMIHttF8_LYAAAAC/kiss-love.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/MyMyRoVnUtIAAAAi/my-love.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/Wq-MvpjAJksAAAAC/emojilaugh-emoji.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/o3BgAS-o0q4AAAAC/funny-emoji.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/NPwO0OgX8VMAAAAd/emoji-thumbs-up.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/bn2EuicZD3sAAAAj/hot-face-joypixels.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/ZJBnKYKrKPgAAAAj/cry-sob.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/s4yHddWuaDIAAAAj/glasses-shades-on.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/0vt7Jp33bDkAAAAj/face-with-rolling-eyes-joypixels.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/GKW9Z440M-kAAAAj/ragdoll-diana.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/DNouincPyA0AAAAC/angry-pissed.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/wNzoikuVQDUAAAAj/sleeping-face-joypixels.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/UjLkeXlZmioAAAAj/face-screaming-in-fear-joypixels.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/kRHMzD7DBiIAAAAC/seriously-serious.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/vIBzr2NlsTgAAAAj/pleading-face-joypixels.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/6QmLOxLyQzgAAAAi/red-heart-symbols.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/9nWf5zXeTvQAAAAj/face-vomiting-joypixels.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/BUNaSE3OY20AAAAj/shock-emoji.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/WdAhOdSb_y8AAAAj/partying-face-people.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/dp6EWQp6yHkAAAAj/wink-side-eye.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/7ywyYVtMHBUAAAAj/smiling-face-with-halo-people.gif' />
+
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/fK_eMctRFfUAAAAj/emoji-emoticon.gif' />
+
+
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/QCr5H3czjFsAAAAj/smirking-face-joypixels.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/3eDU879uzT4AAAAj/shy-blushing.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/JvNKbj0YDF4AAAAj/long-livethe-blob-smiling.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/_u8OV-NlmLEAAAAj/flushed-face-joypixels.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" src='https://c.tenor.com/vHw75zknjZMAAAAj/radiofm4-fm4.gif' alt="">
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/0stVkd7Rdq4AAAAj/zipper-mouth-face-joypixels.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/eRWCVQsZkLIAAAAj/relieved-face-joypixels.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/l_ORUPNkHlsAAAAd/om-shanti-ohm-shanti.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/3OoD7IUEKFYAAAAd/hare-krishna-hare-ram.gif' />
+                <img width="50px" height="50px" onClick="imgClicked(this)" class="emoji" src='https://c.tenor.com/WdME0mdtUL8AAAAC/hindutva-saffron.gif' />
+                <br><br> BirthDay: <br>
+                <img class="gifsCase" onClick="imgClicked(this)" src='https://c.tenor.com/rAWVpO4KyrEAAAAi/raf-rafs.gif' alt="">
+                <img class="gifsCase" onClick="imgClicked(this)" src='https://c.tenor.com/45DN70rEDMkAAAAi/happy-birthday-birthday-card.gif' alt="">
+                <img class="gifsCase" onClick="imgClicked(this)" src='https://c.tenor.com/eEHWga4MMyEAAAAi/happy-birthday-birthday-celebration.gif' alt="">
+                <img class="gifsCase" onClick="imgClicked(this)" src='https://c.tenor.com/Pgaju3wyEmYAAAAi/happy-birthday-hbd.gif' alt="">
+                <img class="gifsCase" onClick="imgClicked(this)" src='https://c.tenor.com/y-8TAtIqFboAAAAi/happy-birthday-birthday.gif' alt="">
+                <img class="gifsCase" onClick="imgClicked(this)" src='https://c.tenor.com/l605A3C-8kUAAAAi/happy-birthday-special-happy-birthday-special-friend.gif' alt="">
+                <img class="gifsCase" onClick="imgClicked(this)" src='https://c.tenor.com/y8_vgMaIMwgAAAAi/happy-birthday-birthday-greeting.gif' alt="">
+                <img class="gifsCase" onClick="imgClicked(this)" src='https://c.tenor.com/6s8bu9_5CkYAAAAi/lignon-lou.gif' alt="">
+                <img class="gifsCase" onClick="imgClicked(this)" src='https://c.tenor.com/k_SoK-F_LRUAAAAi/happy-birthday.gif' alt="">
+                <img class="gifsCase" onClick="imgClicked(this)" src='https://c.tenor.com/3wNb6T-Rvd4AAAAi/hbd-happy.gif' alt="">
+                <img class="gifsCase" onClick="imgClicked(this)" src='https://c.tenor.com/7UUpt7kIFiMAAAAi/happy-birthday-celebration.gif' alt="">
+                <img class="gifsCase" onClick="imgClicked(this)" src='https://c.tenor.com/oAwZ_8nmbMEAAAAi/happy-birthday-birthday-bear.gif' alt="">
+                <img class="gifsCase" onClick="imgClicked(this)" src='https://c.tenor.com/eF1R-uddtx4AAAAi/shoveling-snow.gif' alt="">
+
+                <img class="gifsCase" onClick="imgClicked(this)" src='https://c.tenor.com/FIYe717I-kgAAAAi/cupcakes-happy-birthday.gif' alt="">
+                <img class="gifsCase" onClick="imgClicked(this)" src='https://c.tenor.com/XFssomPvs5oAAAAi/happy-birthday-hbd.gif' alt="">
+                <img class="gifsCase" onClick="imgClicked(this)" src='https://c.tenor.com/NXGVKK5juXAAAAAi/happy-birthday-cake.gif' alt="">
+                <img class="gifsCase" onClick="imgClicked(this)" src='https://c.tenor.com/mYXx9xU3hAQAAAAi/happy-birthday-birthday-celebration.gif' alt="">
+                <img class="gifsCase" onClick="imgClicked(this)" src='https://c.tenor.com/ADzTouwwi4gAAAAi/happy-birthday-bear.gif' alt="">
+
+
+            </div>
+            <div style="text-align:center;font-size:5vh ;margin-top:6px;">Work Space</div>
+
+            <div class="bbg1" id="test_container" style="padding:10px;">
+                <div class="card1 bg_color1 font1 fontsize1" id="test">
+                    <div id="test1"></div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center;">
+                <button onClick=createClicked() id="create" class="mx-2 my-2 btn btn-success">&nbsp&nbsp&nbsp&nbsp <img
+                        class="btn_icon" src="static/media/button_img/add-new.png" alt=""> &nbsp&nbsp&nbsp&nbsp</button>
+
+            </div>
+
+            <div id="activity"></div>
+            <hr>
+            <button class="btn btn-success my-2 mx-2 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                Guide <img class="btn_icon" src="static/media/button_img/meeting-help.png" alt="">
+            </button>
+
+            <div class="footer">Feedback : <b>aditya5kumar2012@gmail.com</b>
+                <img width="25px" height="25px" onClick="" style="position: relative;top:-5px;" src='https://c.tenor.com/JvNKbj0YDF4AAAAj/long-livethe-blob-smiling.gif' />
+
+            </div>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                    <h5 id="offcanvasRightLabel">
+                        <button onClick="generateLink()" type="button" class="btn btn-success mx-1">Generate
+                            Link <img class="btn_icon" src="static/media/button_img/link.png" alt="" </button>
+                        <button type="button" class="btn btn-success " onClick="previewClicked()">Preview <img
+                                    class="btn_icon" src="static/media/button_img/preview.png" alt="" </button>
+                    </h5>
+
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+
+                <div id="jugad" style="overflow-y:auto;     height: 63vh;">
+                    <div id="main_test" class="bbg1" style="overflow-y:auto;">
+
+                    </div>
+                </div>
+                <hr>
+                <div id="footer2"><img style="margin: 7px;" src="https://writenshare.herokuapp.com/static/media/logo.png" height="60px" width="60px" alt="">Writing App
+                    <div id="in_footer2" style="    position: absolute;
+                    left: 95px;
+                    font-size: 68%;
+                    bottom: -7px;   ">Developed By Aditya
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Guide</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" style="    font-size: 120%;">
+            <div>
+                Here you can compose an animated message/letter/note and then generate a link of that content which you can share on Instagram or Facebook.You just need to add elements one by one and click on generate link.
+                <br><br><b>#Buttons & their uses:</b><br><b>Clear</b> : It clears the text you have entered.<br><b>
+                    GIFs</b> : It shows the GIFs/memes which you can add in your element.<br> <b>My Page </b>: It shows you content.<br><b>
+                    Generate Link</b> : It generates a link of that content each time you click on this button.
+                <br><b> Preview </b>: It shows your content in full screen.
+                <br><b> Copy </b>:Copy the link into your clipboard.
+                <br><b> Delete </b>: Deletes the link form the server.
+                <br><b><br>#Options</b><br><b>Shape</b> : You can select shape of the element which you are going to add in the content
+                <br><b>Color</b>: You can select background color of the element.
+                <br><b>Font Style</b> : Here you can select a particular font style of a particular element.
+                <br><b>Font Size</b>: Here you can select the font size of a particular element.
+                <br><b>Image Size</b> : Here you can select the size of image(emojis,GIFs) of a particular element.
+                <br><b>Music</b> : here you can select the background music of the content which will play when any one opnes the content.
+                <br><b>BackGround</b> : It is the background color of the whole content.
+                <br>
+                <br><b>#</b>If you want to remove the selected image, you just need to click on that image on the element.
+                <br><b>#</b> If you want to delete any element from the content then you just need to click on the element.
+            </div>
+
+        </div>
+    </div>
+    <a href="#jugad2" id="goToJugad" style="display:none;"></a>
+    <a href="#test" id="goToTest" style="display:none;"></a>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</html>
