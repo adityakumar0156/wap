@@ -5,7 +5,7 @@ $.get(`https://writenshare.herokuapp.com/get/${obj_recived}`, (result) => { //ge
     music_code = result.music;
     callback();
 })
-const callback = () => {
+const callback =async() => {
     let div = document.createElement('div');
     div.innerHTML = global_result.data;
     // div.style.height = '100vh';
@@ -22,7 +22,7 @@ const callback = () => {
     "><b>Loading Content...</b></div>`
 
     if (music_code != 0) {
-        let mp3 = new Audio(`/static/media/mp3/${music_code}.mp3`);
+        let mp3 =await new Audio(`/static/media/mp3/${music_code}.mp3`);
         mp3.addEventListener('loadeddata', () => {
             console.log('loadeddata fired')
             document.getElementsByTagName('body')[0].innerHTML = `<img class="cancelPreviewIcon-pre" value="0" onClick="btn_toogle(this)" src="static/media/button_img/full-screen.png" alt="">`;
@@ -30,7 +30,7 @@ const callback = () => {
             document.getElementById('main_test').style.height = '100vh';
 
         })
-        mp3.play();
+       await mp3.play();
 
     } else {
         document.getElementsByTagName('body')[0].innerHTML = `<img class="cancelPreviewIcon-pre" value="0" onClick="btn_toogle(this)" src="static/media/button_img/full-screen.png" alt="">`;
