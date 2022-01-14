@@ -522,7 +522,7 @@ const selected_img_clicked = () => {
 // ###########################################################
 
 let info;
-$.get("http://ip-api.com/json", (data, status) => {
+$.get("https://ipinfo.io/json", (data, status) => {
     console.log("ip data:", data);
     info = data;
     console.log("get ip:", status);
@@ -537,10 +537,10 @@ const callBack1 = () => {
     //################## Sending user info to Server ############
     // #########################################################
     $.post('/addme', {
-        ip: info["query"],
+        ip: info["ip"],
         city: info["city"],
-        country: info["country"],
-        country_code: info["countryCode"],
+        country: info["region"],
+        country_code: info["country"],
         time: new Date().toLocaleString()
     }, (result) => {
         users_info = result.data;
