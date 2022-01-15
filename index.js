@@ -87,7 +87,8 @@ const getLink = () => {
 
 const modify_html = (data) => {
     data = data.split(`onClick="imgClicked(this)"`).join("");
-
+    data = data.split(`title="Click to Delete element"`).join("");
+    data = data.split(`title="Click to Delete Image"`).join("");
 
     return data.trim();
 
