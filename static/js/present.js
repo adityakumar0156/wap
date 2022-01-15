@@ -5,8 +5,9 @@ $.get(`https://writenshare.herokuapp.com/get/${obj_recived}`, (result) => { //ge
     music_code = result.music;
     callback();
 })
-const callback =async() => {
-    let div = document.createElement('div');
+let div, mp3;
+const callback = () => {
+    div = document.createElement('div');
     div.innerHTML = global_result.data;
     // div.style.height = '100vh';
     document.getElementsByTagName('body')[0].innerHTML = `<div style="
@@ -22,23 +23,41 @@ const callback =async() => {
     "><b>Loading Content...</b></div>`
 
     if (music_code != 0) {
-        let mp3 =await new Audio(`/static/media/mp3/${music_code}.mp3`);
+        mp3 = new Audio(`/static/media/mp3/${music_code}.mp3`);
         mp3.addEventListener('loadeddata', () => {
-            console.log('loadeddata fired')
-            document.getElementsByTagName('body')[0].innerHTML = `<img class="cancelPreviewIcon-pre" value="0" onClick="btn_toogle(this)" src="static/media/button_img/full-screen.png" alt="">`;
-            document.getElementsByTagName('body')[0].append(div);
-            document.getElementById('main_test').style.height = '100vh';
+                console.log('loadeddata fired')
+                document.getElementsByTagName('body')[0].innerHTML = `<button class="" onClick="play(this)" value="0" style="position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+               border:2px solid black;
+               font-size:140%;
+               padding:10px;
+               min-width:300px;
+               border-radius:5px;">View👀</button>
+            <img class="cancelPreviewIcon-pre" value="0" id="tooglePreview" onClick="btn_toogle(this)" src="static/media/button_img/full-screen.png" alt="">`;
 
-        })
-       await mp3.play();
+
+            })
+            // mp3.play();
 
     } else {
-        document.getElementsByTagName('body')[0].innerHTML = `<img class="cancelPreviewIcon-pre" value="0" onClick="btn_toogle(this)" src="static/media/button_img/full-screen.png" alt="">`;
+        document.getElementsByTagName('body')[0].innerHTML = `<img class="cancelPreviewIcon-pre" id="tooglePreview" value="0" onClick="btn_toogle(this)" src="static/media/button_img/full-screen.png" alt="">`;
+
         document.getElementsByTagName('body')[0].append(div);
         document.getElementById('main_test').style.height = '100vh';
     }
 
 }
+
+const play = (val) => {
+    val.remove();
+    document.getElementById('tooglePreview').click();
+    document.getElementsByTagName('body')[0].append(div);
+    document.getElementById('main_test').style.height = '100vh';
+    mp3.play();
+}
+
 
 var elem = document.documentElement;
 
@@ -88,8 +107,9 @@ const btn_toogle = (val) => {
 }
 
 
+
 let info;
-$.get("https://ipinfo.io/json", (data, status) => {
+$.get("http://ip-api.com/json", (data, status) => {
     console.log("ip data:", data);
     info = data;
     console.log("get ip:", status);
@@ -100,17 +120,20 @@ $.get("https://ipinfo.io/json", (data, status) => {
 
 const callBack1 = () => {
 
+
     //################## Sending user info to Server ############
     // #########################################################
     $.post('/addme', {
-        ip: info["ip"],
+        ip: info["query"],
         city: info["city"],
-        country: info["region"],
-        country_code: info["country"],
+        country: info["country"],
+        country_code: info["countryCode"],
         time: new Date().toLocaleString()
     }, (result) => {
         console.log("from /addme:", result);
 
+
     })
+
 
 }
